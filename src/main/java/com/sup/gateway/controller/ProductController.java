@@ -42,6 +42,7 @@ public class ProductController {
 	        produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<Product> create(@RequestBody Product newProduct) throws ServerException{
 		
+		newProduct.setCreatedAt(LocalDateTime.now());
 		Product product = productRepository.save(newProduct);
 		
 		if (product == null)

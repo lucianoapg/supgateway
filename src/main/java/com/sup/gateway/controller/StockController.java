@@ -1,5 +1,7 @@
 package com.sup.gateway.controller;
 
+import java.time.LocalDateTime;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -32,8 +34,10 @@ public class StockController {
 		
 		if(manageStock.getIncrease() != null) {
 			product.setQuantityInStock(product.getQuantityInStock().add(manageStock.getIncrease()));
+			product.setUpdatedAt(LocalDateTime.now());
 		} else	if(manageStock.getDecrease() != null) {
 			product.setQuantityInStock(product.getQuantityInStock().subtract(manageStock.getDecrease()));
+			product.setUpdatedAt(LocalDateTime.now());
 		}		
 		
 		Product updatedProduct = productRepository.save(product);
