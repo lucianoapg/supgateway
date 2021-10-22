@@ -1,0 +1,176 @@
+{
+	"info": {
+		"_postman_id": "33226df8-f55f-439e-ab7f-2b392886f86a",
+		"name": "supgateway",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "localhost:3080/product",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3080/product",
+					"host": [
+						"localhost"
+					],
+					"port": "3080",
+					"path": [
+						"product"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3080/product",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Easter egg\",\r\n    \"quantityInStock\": 100,\r\n    \"unitPrice\": 1.50,\r\n    \"supplier\": {\r\n        \"id\": 2\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3080/product",
+					"host": [
+						"localhost"
+					],
+					"port": "3080",
+					"path": [
+						"product"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3080/product",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 1,\r\n    \"name\": \"Eggplants\",\r\n    \"unitPrice\": 12.50\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3080/product",
+					"host": [
+						"localhost"
+					],
+					"port": "3080",
+					"path": [
+						"product"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3080/stock",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"productId\": 3,\r\n    \"increase\": 900\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3080/stock",
+					"host": [
+						"localhost"
+					],
+					"port": "3080",
+					"path": [
+						"stock"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3080/stock",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"productId\": 3,\r\n    \"decrease\": 90\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3080/stock",
+					"host": [
+						"localhost"
+					],
+					"port": "3080",
+					"path": [
+						"stock"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3080/product/4",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:3080/product/4",
+					"host": [
+						"localhost"
+					],
+					"port": "3080",
+					"path": [
+						"product",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3080/product/2",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3080/product/2",
+					"host": [
+						"localhost"
+					],
+					"port": "3080",
+					"path": [
+						"product",
+						"2"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

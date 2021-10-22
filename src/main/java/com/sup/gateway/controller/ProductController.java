@@ -33,8 +33,12 @@ public class ProductController {
 	}
 
 	@GetMapping("/{id}")
-	public Product getById(@PathVariable Long id) {
-		return productRepository.getById(id);
+	public ResponseEntity<?> getById(@PathVariable Long id) {
+		Product product = productRepository.findById(id).orElse(null);
+		if(product == null) {
+			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+		}
+		return ResponseEntity.status(HttpStatus.OK).body(product);
 	}
 
 	@PostMapping(
@@ -72,7 +76,7 @@ public class ProductController {
 	@DeleteMapping("/{id}")
 	public ResponseEntity<Long> delete(@PathVariable Long id){
 		
-		Product product = productRepository.getById(id);
+		Product product = productRepository.findById(id).get();
 		
 		if (product == null)
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
